@@ -1,5 +1,6 @@
 package demo2.d1016.test;
 
+import demo2.d1016.bean.Orders;
 import demo2.d1016.collectiontype.Book;
 import demo2.d1016.collectiontype.Course;
 import demo2.d1016.collectiontype.Stu;
@@ -29,11 +30,22 @@ public class TestSpring {
     }
 
     @Test
-    public void testCollection3(){
+    public void test3(){
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("demo2/d1016/bean6.xml");
         Course course = context.getBean("myBean", Course.class);
         System.out.println(course);
 
+    }
+
+    @Test
+    public void test4(){
+        ClassPathXmlApplicationContext context =
+                new ClassPathXmlApplicationContext("demo2/d1016/bean7.xml");
+        Orders orders = context.getBean("orders", Orders.class);
+        System.out.println("获取创建bean实例对象");
+        System.out.println(orders);
+        //手动销毁bean实例
+        context.close();
     }
 }
