@@ -21,8 +21,10 @@ public class TestSpring {
     public void testCollection2(){
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("demo2/d1016/bean5.xml");
-        Book book = context.getBean("book", Book.class);
-        book.test();
+        Book book1 = context.getBean("book", Book.class);
+        Book book2 = context.getBean("book", Book.class);
+        System.out.println(book1);
+        System.out.println(book2);
 
     }
 

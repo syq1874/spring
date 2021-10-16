@@ -11,7 +11,7 @@
         <value>水浒传</value>
     </util:list>
 
-    <bean id="book" class="demo2.d1016.collectiontype.Book">
+    <bean id="book" class="demo2.d1016.collectiontype.Book" scope="prototype">      <!--scope="prototype设置为多实例对象-->
         <property name="list" ref="bookList"></property>
     </bean>
 
