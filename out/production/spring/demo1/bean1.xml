@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="user" class="demo1.d1014.demo1.User"></bean>
+    <!--set方法注入属性-->
+    <bean id="book" class="demo1.d1014.demo1.Book">
+        <!-- 使用property完成属性的注入-->
+        <property name="bname" value="java从入门到放弃"></property>
+    </bean>
+
+    <!--  有参构造注入属性  -->
+    <bean id="orders" class="demo1.d1014.demo1.Order">
+        <constructor-arg name="oname" value="书"></constructor-arg>
+        <constructor-arg name="address" value="China"></constructor-arg>
+    </bean>
+</beans>

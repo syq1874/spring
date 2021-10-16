@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 外部bean-->
+    <bean id="userService" class="demo1.d1015.service.UserService">
+        <!-- 注入userDao的对象 -->
+        <property name="userDao" ref="userDaoImpl"></property>
+    </bean>
+    <bean id="userDaoImpl" class="demo1.d1015.dao.UserImpl"></bean>
+
+
+    <!-- 内部bean-->
+    <bean id="emp" class="demo1.d1015.bean.Emp">
+        <property name="ename" value="张三"></property>
+        <property name="gender" value="女"></property>
+        <property name="dept">
+            <bean id="dept" class="demo1.d1015.bean.Dept">
+                <property name="dname" value="销售部"></property>
+            </bean>
+        </property>
+    </bean>
+
+</beans>
