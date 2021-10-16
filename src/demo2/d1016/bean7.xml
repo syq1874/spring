@@ -6,4 +6,5 @@
     <bean id="orders" class="demo2.d1016.bean.Orders" init-method="init" destroy-method="destroy">
         <property name="oname" value="手机"></property>
     </bean>
+    <bean id="myBeanPost" class="demo2.d1016.bean.MyBeanPost"></bean>
 </beans>
