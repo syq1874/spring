@@ -1,6 +1,7 @@
 package demo2.d1016.test;
 
 import demo2.d1016.collectiontype.Book;
+import demo2.d1016.collectiontype.Course;
 import demo2.d1016.collectiontype.Stu;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -22,6 +23,15 @@ public class TestSpring {
                 new ClassPathXmlApplicationContext("demo2/d1016/bean5.xml");
         Book book = context.getBean("book", Book.class);
         book.test();
+
+    }
+
+    @Test
+    public void testCollection3(){
+        ApplicationContext context =
+                new ClassPathXmlApplicationContext("demo2/d1016/bean6.xml");
+        Course course = context.getBean("myBean", Course.class);
+        System.out.println(course);
 
     }
 }
