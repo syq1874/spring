@@ -3,8 +3,14 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="emp" class="demo2.d1018.autowire.Emp">
-        <property name="dept" ref="dept"></property>
+    <!--
+        使用autowire进行自动装配
+        autowire两个常用的值
+            byName 根据属性名称注入     注入值bean的id值必须和类属性名称一样
+            byType 根据属性类型注入
+    -->
+    <bean id="emp" class="demo2.d1018.autowire.Emp" autowire="byType">
+        <!--<property name="dept" ref="dept"></property>-->
     </bean>
 
     <bean id="dept" class="demo2.d1018.autowire.Dept">

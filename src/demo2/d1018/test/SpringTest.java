@@ -13,7 +13,7 @@ public class SpringTest {
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("demo2/d1018/bean1.xml");
         Emp emp = context.getBean("emp", Emp.class);
-        emp.test();
+        System.out.println(emp);
     }
 
 }
