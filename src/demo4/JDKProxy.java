@@ -29,6 +29,12 @@ class UserDaoProxy implements InvocationHandler{
 
         Object res = method.invoke(obj, args);
 
+        if(method.getName().equals("add")){
+            System.out.println("执行的是add方法");
+        }else if(method.getName().equals("update")){
+            System.out.println("执行的是update方法");
+        }
+
         System.out.println("方法之后执行..."+obj);
         return res;
     }
