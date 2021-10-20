@@ -18,4 +18,19 @@ public class UserDaoImpl implements UserDao{
         int update = jdbcTemplate.update(sql, args);
         System.out.println(update);
     }
+
+    @Override
+    public void update(User user) {
+        String sql="update user set username=?,ustatus=? where user_id=?";
+        Object[] args={ user.getUsername(), user.getUstatus(),user.getUserId()};
+        int update = jdbcTemplate.update(sql, args);
+        System.out.println(update);
+    }
+
+    @Override
+    public void delete(String id) {
+        String sql="delete from user where user_id=?";
+        int update = jdbcTemplate.update(sql, id);
+        System.out.println(update);
+    }
 }

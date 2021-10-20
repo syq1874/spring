@@ -15,4 +15,12 @@ public class UserService {
     public void addUser(User user){
         userDao.add(user);
     }
+
+    public void updateUser(User user){
+        userDao.update(user);
+    }
+
+    public void deleteUser(String id){
+        userDao.delete(id);
+    }
 }

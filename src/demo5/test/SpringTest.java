@@ -19,4 +19,26 @@ public class SpringTest {
         user.setUstatus("a");
         userService.addUser(user);
     }
+
+    @Test
+    public void testUpdate(){
+        ApplicationContext context=
+                new ClassPathXmlApplicationContext("demo5/bean1.xml");
+        UserService userService = context.getBean("userService", UserService.class);
+        User user =new User();
+        user.setUserId("1");
+        user.setUsername("admin");
+        user.setUstatus("b");
+        userService.updateUser(user);
+    }
+
+    @Test
+    public void testdelete(){
+        ApplicationContext context=
+                new ClassPathXmlApplicationContext("demo5/bean1.xml");
+        UserService userService = context.getBean("userService", UserService.class);
+        String id ="1";
+        userService.deleteUser(id);
+    }
+
 }
