@@ -41,4 +41,8 @@ public class UserService {
     public void batchAdd(List<Object[]> batchArgs){
         userDao.batchAddUser(batchArgs);
     }
+
+    public void batchUpdate(List<Object[]> batchArgs){
+        userDao.batchUpdateUser(batchArgs);
+    }
 }

@@ -85,4 +85,19 @@ public class SpringTest {
         userService.batchAdd(batchArgs);
     }
 
+    @Test
+    public void testBatchUpdate(){
+        ApplicationContext context=
+                new ClassPathXmlApplicationContext("demo5/bean1.xml");
+        UserService userService = context.getBean("userService", UserService.class);
+        List<Object[]> batchArgs =new ArrayList<>();
+        Object[] o1={"java","d","3"};
+        Object[] o2={"C++","e","4"};
+        Object[] o3={"MySQL","f","5"};
+        batchArgs.add(o1);
+        batchArgs.add(o2);
+        batchArgs.add(o3);
+        userService.batchUpdate(batchArgs);
+    }
+
 }

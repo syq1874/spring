@@ -18,4 +18,6 @@ public interface UserDao {
     List<User> findAllUser();
 
     void batchAddUser(List<Object[]> batchArgs);
+
+    void batchUpdateUser(List<Object[]> batchArgs);
 }
