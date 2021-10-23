@@ -2,8 +2,11 @@ package demo5.dao;
 
 import demo5.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public class UserDaoImpl implements UserDao{
@@ -32,5 +35,26 @@ public class UserDaoImpl implements UserDao{
         String sql="delete from user where user_id=?";
         int update = jdbcTemplate.update(sql, id);
         System.out.println(update);
+    }
+
+    @Override
+    public int selectUser() {
+        String sql="select count(*) from user";
+        Integer count = jdbcTemplate.queryForObject(sql, Integer.class);
+        return count;
+    }
+
+    @Override
+    public User findUserInfo(String id) {
+        String sql="select * from user where user_id=?";
+        User user = jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), id);
+        return user;
+    }
+
+    @Override
+    public List<User> findAllUser() {
+        String sql="select * from user";
+        List<User> bookList = jdbcTemplate.query(sql, new BeanPropertyRowMapper<User>(User.class));
+        return bookList;
     }
 }

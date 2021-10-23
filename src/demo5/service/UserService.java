@@ -6,6 +6,8 @@ import demo5.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -22,5 +24,17 @@ public class UserService {
 
     public void deleteUser(String id){
         userDao.delete(id);
+    }
+
+    public int selectUser(){
+        return userDao.selectUser();
+    }
+
+    public User findOne(String id){
+        return userDao.findUserInfo(id);
+    }
+
+    public List<User> findAll(){
+        return userDao.findAllUser();
     }
 }
