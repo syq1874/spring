@@ -100,4 +100,17 @@ public class SpringTest {
         userService.batchUpdate(batchArgs);
     }
 
+    @Test
+    public void testBatchDelete(){
+        ApplicationContext context=
+                new ClassPathXmlApplicationContext("demo5/bean1.xml");
+        UserService userService = context.getBean("userService", UserService.class);
+        List<Object[]> batchArgs =new ArrayList<>();
+        Object[] o1={"4"};
+        Object[] o2={"5"};
+        batchArgs.add(o1);
+        batchArgs.add(o2);
+        userService.batchDelete(batchArgs);
+    }
+
 }

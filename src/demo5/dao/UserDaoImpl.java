@@ -72,4 +72,11 @@ public class UserDaoImpl implements UserDao{
         int[] ints = jdbcTemplate.batchUpdate(sql, batchArgs);
         System.out.println(Arrays.toString(ints));
     }
+
+    @Override
+    public void batchDeleteUser(List<Object[]> batchArgs) {
+        String sql="delete from user where user_id=?";
+        int[] ints = jdbcTemplate.batchUpdate(sql, batchArgs);
+        System.out.println(Arrays.toString(ints));
+    }
 }
