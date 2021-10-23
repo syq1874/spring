@@ -16,4 +16,6 @@ public interface UserDao {
     User findUserInfo(String id);
 
     List<User> findAllUser();
+
+    void batchAddUser(List<Object[]> batchArgs);
 }

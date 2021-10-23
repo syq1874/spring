@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SpringTest {
@@ -66,6 +67,22 @@ public class SpringTest {
         UserService userService = context.getBean("userService", UserService.class);
         List<User> all = userService.findAll();
         System.out.println(all);
+    }
+
+
+    @Test
+    public void testBatchAdd(){
+        ApplicationContext context=
+                new ClassPathXmlApplicationContext("demo5/bean1.xml");
+        UserService userService = context.getBean("userService", UserService.class);
+        List<Object[]> batchArgs =new ArrayList<>();
+        Object[] o1={"3","java","a"};
+        Object[] o2={"4","C++","b"};
+        Object[] o3={"5","MySQL","c"};
+        batchArgs.add(o1);
+        batchArgs.add(o2);
+        batchArgs.add(o3);
+        userService.batchAdd(batchArgs);
     }
 
 }

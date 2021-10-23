@@ -37,4 +37,8 @@ public class UserService {
     public List<User> findAll(){
         return userDao.findAllUser();
     }
+
+    public void batchAdd(List<Object[]> batchArgs){
+        userDao.batchAddUser(batchArgs);
+    }
 }
